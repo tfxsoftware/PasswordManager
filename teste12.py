@@ -311,7 +311,7 @@ class  App(database):
                 self.editentry_login_label = Label(self.editentry_window, text="Login: ")
                 self.editentry_pwd_label = Label(self.editentry_window, text="Password: ")
                 self.editentry_obs_label = Label(self.editentry_window, text="Additional info: ")
-                self.editentry_accountname_entry = Label(self.editentry_window, text=self.name_selected)
+                self.editentry_accountname_entry = Label(self.editentry_window, text=self.name_selected, foreground="green")
                 self.editentry_login_entry = Entry(self.editentry_window)
                 self.editentry_pwd_entry = Entry(self.editentry_window)
                 self.editentry_obs_text = Text(self.editentry_window,width=15,height=10)
