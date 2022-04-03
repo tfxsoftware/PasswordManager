@@ -75,8 +75,6 @@ class database():
         self.existing_entries = self.cursor.execute("SELECT * FROM userinfo WHERE userid= ? AND accountname = ?",(self.valid_email,self.newentry_name_entry.get(),))
         for row in self.existing_entries:
             self.used_names = row[0]
-        print(type(self.used_names))
-        print(self.used_names)
 
         if self.newentry_name_entry.get() == "":
             messagebox.showwarning('Error!','Name cant be empty!')
@@ -168,7 +166,6 @@ class  App(database):
         self.login_window.title('Password Manager')
         self.login_window.geometry('400x100')
         self.login_window.resizable(FALSE, FALSE)
-        self.login_window.iconbitmap("pw_manager\keepassx.ico")
 
 
         self.login_email_label = Label(self.login_window, text='E-mail: ')
@@ -196,7 +193,6 @@ class  App(database):
         self.newaccount_window.transient(self.login_window)
         self.newaccount_window.focus_force()
         self.newaccount_window.grab_set()
-        self.newaccount_window.iconbitmap("pw_manager\keepassx.ico")
 
         self.newaccount_email_label = Label(self.newaccount_window, text="New Email: ")
         self.newaccount_password_label = Label(self.newaccount_window, text="New Password: ")
@@ -224,7 +220,6 @@ class  App(database):
         self.main_window.title('Password Manager')
         self.main_window.geometry("750x380")
         self.main_window.resizable(FALSE, FALSE)
-        self.main_window.iconbitmap("pw_manager\keepassx.ico")
 
         self.main_manage_label = Label(self.main_window, text="SAVED PASSWORDS: ")
         self.main_pwd_treeview = Treeview(self.main_window, height=15, columns=("col1, col2, col3, col4"))
@@ -270,7 +265,7 @@ class  App(database):
         self.newentry_window.transient(self.main_window)
         self.newentry_window.focus_force()
         self.newentry_window.grab_set()
-        self.newentry_window.iconbitmap("pw_manager\keepassx.ico")
+
 
         self.newentry_new_label = Label(self.newentry_window, text="New Entry: ")
         self.newentry_name_label = Label(self.newentry_window, text="Account name: ")
@@ -309,7 +304,7 @@ class  App(database):
                 self.editentry_window.transient(self.main_window)
                 self.editentry_window.focus_force()
                 self.editentry_window.grab_set()
-                self.editentry_window.iconbitmap("pw_manager\keepassx.ico")
+
 
                 self.editentry_view_label = Label(self.editentry_window, text="View Entry: ")
                 self.editentry_name_label = Label(self.editentry_window, text="Account name: ")
