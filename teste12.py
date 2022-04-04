@@ -18,15 +18,15 @@ class database():
     def create_table(self):
         self.db_connect()
         self.cursor.execute("""CREATE TABLE IF NOT EXISTS accounts(
-        email CHAR(40) PRIMARY KEY,
-        password CHAR(40) NOT NULL);
+        email VARCHAR2(40) PRIMARY KEY,
+        password VARCHAR2(40) NOT NULL);
         """)
         self.cursor.execute("""CREATE TABLE IF NOT EXISTS userinfo(
-        accountname VARCHAR(40) NOT NULL,
-        login_key VARCHAR(40) NOT NULL,
-        login_password VARCHAR(40) NOT NULL,
-        obs VARCHAR(500),
-        userid CHAR(40), 
+        accountname VARCHAR2(40) NOT NULL,
+        login_key VARCHAR2(40) NOT NULL,
+        login_password VARCHAR2(40) NOT NULL,
+        obs VARCHAR2(500),
+        userid VARCHAR2CHAR(40), 
         FOREIGN KEY(userid) REFERENCES accounts(email));
         """)
         self.conn_accounts.commit()
