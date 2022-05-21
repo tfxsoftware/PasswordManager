@@ -217,7 +217,7 @@ class  App(database):
 
         self.login_window.destroy()
         self.main_window = Tk()
-        self.main_window.title('Password Manager')
+        self.main_window.title('Password Manager: ' + self.valid_email)
         self.main_window.geometry("750x380")
         self.main_window.resizable(FALSE, FALSE)
 
